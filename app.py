@@ -225,7 +225,7 @@ class MainWindow(QMainWindow):
 
         self.folder = Path(folder)
         self.files = sorted(
-            [p for p in self.folder.rglob("*") if p.suffix.lower() in IMAGE_EXTS and p.is_file()]
+            [p for p in self.folder.iterdir() if p.suffix.lower() in IMAGE_EXTS and p.is_file()]
         )
         if not self.files:
             QMessageBox.information(self, "No images", "No supported images found in that folder.")

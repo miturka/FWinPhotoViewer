@@ -1,6 +1,6 @@
 # FWinPhotoViewer
 
-, built with PyQt6 and Pillow. Designed as a better alternative to Windows Photo Viewer, with support for favorites, HEIC/HEIF formats, and batch export.
+A fast, modern, and user-friendly image viewer for Windows, built with PyQt6 and Pillow. Designed as a better alternative to Windows Photo Viewer, with support for favorites, HEIC/HEIF formats, and batch export.
 
 ## Features
 
@@ -19,7 +19,7 @@
 
 ### Option 1: Download from Releases
 
-1. Go to the [Releases](https://github.com/yourusername/FWinPhotoViewer/releases) page.
+1. Go to the [Releases](https://github.com/miturka/FWinPhotoViewer/releases) page.
 2. Download the latest `FWinPhotoViewer.exe`.
 3. Place it anywhere (e.g. Desktop, Programs folder).
 4. Run it — no installation required.
@@ -76,6 +76,6 @@ This project is licensed under the MIT License. See `LICENSE` for details.
 
 ## Screenshots
 
-*(Add screenshots of the app UI here)*
+![Main Window](screenshots/main_window.png "Main Window")
 
 ---
