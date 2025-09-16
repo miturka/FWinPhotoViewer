@@ -36,8 +36,12 @@ jobs:
               --windowed --onedir app.py \
               --name FWinPhotoViewer-mac \
               --icon=assets/icon.icns \
-              --collect-all PyQt6 \
-              --exclude-module PyQt6.QtBluetooth
+              --collect-submodules PyQt6 \
+              --collect-data PyQt6 \
+              --collect-binaries PyQt6.Qt6Core \
+              --collect-binaries PyQt6.Qt6Gui \
+              --collect-binaries PyQt6.Qt6Widgets \
+              --collect-plugins platforms
             cd dist
             zip -r ../FWinPhotoViewer-mac.zip FWinPhotoViewer-mac.app
           else
