@@ -32,12 +32,12 @@ jobs:
           if [[ "$RUNNER_OS" == "Windows" ]]; then
             pyinstaller --onefile --windowed app.py --name FWinPhotoViewer-win --icon=assets/icon.ico --add-data "assets/icon.ico;assets"
           elif [[ "$RUNNER_OS" == "macOS" ]]; then
-            export PYINSTALLER_COPY_METADATA=1
             pyinstaller --clean --noconfirm \
               --windowed --onedir app.py \
               --name FWinPhotoViewer-mac \
               --icon=assets/icon.icns \
-              --collect-all PyQt6
+              --collect-all PyQt6 \
+              --copy-metadata PyQt6
             cd dist
             zip -r ../FWinPhotoViewer-mac.zip FWinPhotoViewer-mac.app
           else
