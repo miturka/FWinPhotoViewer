@@ -37,7 +37,7 @@ jobs:
               --name FWinPhotoViewer-mac \
               --icon=assets/icon.icns \
               --collect-all PyQt6 \
-              --copy-metadata PyQt6
+              --exclude-module PyQt6.QtBluetooth
             cd dist
             zip -r ../FWinPhotoViewer-mac.zip FWinPhotoViewer-mac.app
           else
