@@ -30,12 +30,12 @@ jobs:
       - name: Build with PyInstaller
         run: |
           if [[ "$RUNNER_OS" == "Windows" ]]; then
-            pyinstaller --onefile --windowed app.py --name FWinPhotoViewer-win.exe --icon=assets/icon.ico --add-data "assets/icon.ico;assets"
+            pyinstaller --onefile --windowed app.py --name FWinPhotoViewer-win --icon=assets/icon.ico --add-data "assets/icon.ico;assets"
           elif [[ "$RUNNER_OS" == "macOS" ]]; then
             pyinstaller --windowed --onedir app.py \
             --name FWinPhotoViewer-mac \
             --icon=assets/icon.icns \
-            --add-binary "$(python3 -m PyQt6.QtCore.QLibraryInfo --path Plugins)/platforms/libqcocoa.dylib:PyQt6/Qt/plugins/platforms"
+            --collect-all PyQt6
             cd dist
             zip -r ../FWinPhotoViewer-mac.zip FWinPhotoViewer-mac.app
           else
