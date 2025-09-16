@@ -30,11 +30,11 @@ jobs:
       - name: Build with PyInstaller
         run: |
             if [[ "$RUNNER_OS" == "Windows" ]]; then
-            pyinstaller --onefile --windowed app.py --name FWinPhotoViewer --icon=assets/icon.ico --add-data "assets/icon.ico;assets"
+            pyinstaller --onefile --windowed app.py --name FWinPhotoViewer-win.exe --icon=assets/icon.ico --add-data "assets/icon.ico;assets"
             elif [[ "$RUNNER_OS" == "macOS" ]]; then
-            pyinstaller --onefile --windowed app.py --name FWinPhotoViewer --icon=assets/icon.icns
+            pyinstaller --windowed --onedir app.py --name FWinPhotoViewer-mac --icon=assets/icon.icns
             else
-            pyinstaller --onefile --windowed app.py --name FWinPhotoViewer --icon=assets/icon.png
+            pyinstaller --onefile --windowed app.py --name FWinPhotoViewer-linux --icon=assets/icon.png
             fi
         shell: bash
 
